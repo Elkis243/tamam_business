@@ -1,8 +1,8 @@
 {% extends "base.html" %} {% load static %} {% block base %} {% include "components/navbar.html" %}
 
 <!-- Hero Section -->
-<section class="page-hero bg-primary text-white py-5" style="margin-top: 80px">
-  <div class="container">
+<section class="page-hero bg-primary text-white py-5" style="margin-top: -35px; padding-top: 80px">
+  <div class="container px-4">
     <div class="row align-items-center">
       <div class="col-lg-8 mx-auto text-center">
         <h1 class="display-4 fw-bold mb-3" data-sal="fade-up" data-sal-duration="600">Nos Produits</h1>
@@ -13,7 +13,7 @@
 </section>
 
 <section class="py-5">
-  <div class="container">
+  <div class="container px-4">
     <div class="row g-4">
       <div class="col-md-6 col-lg-4" data-sal="fade-up" data-sal-duration="600" data-sal-delay="100">
         <div class="product-card h-100 border rounded-3 overflow-hidden bg-white shadow-sm">
@@ -73,7 +73,7 @@
     <div class="row mt-5">
       <div class="col-lg-10 mx-auto">
         <div class="cta-section bg-primary text-white rounded-4 p-4 shadow-lg position-relative overflow-hidden">
-          <div class="position-absolute top-0 end-0 opacity-25" style="font-size: 100px; line-height: 1; transform: translate(20px, -20px);">
+          <div class="position-absolute top-0 end-0 opacity-25" style="font-size: 100px; line-height: 1; transform: translate(20px, -20px)">
             <i class="bi bi-search"></i>
           </div>
           <div class="row align-items-center position-relative">
@@ -84,9 +84,7 @@
               <p class="mb-0 text-white-50">Contactez-nous pour discuter de vos besoins spécifiques. Nous pouvons vous proposer des solutions sur mesure adaptées à vos exigences.</p>
             </div>
             <div class="col-lg-4 text-center text-lg-end">
-              <a href="{% url 'quote' %}" class="btn btn-primary">
-                <i class="bi bi-telephone-fill me-2"></i>Demander un devis
-              </a>
+              <a href="{% url 'quote' %}" class="btn btn-primary"> <i class="bi bi-telephone-fill me-2"></i>Demander un devis </a>
             </div>
           </div>
         </div>
