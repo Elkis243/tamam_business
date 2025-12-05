@@ -52,7 +52,7 @@ def contact(request):
                         from_email=getattr(settings, "DEFAULT_FROM_EMAIL", email),
                         recipient_list=[
                             getattr(
-                                settings, "CONTACT_EMAIL", "contact@tamambusiness.com"
+                                settings, "CONTACT_EMAIL", "papymvulazana@gmail.com"
                             )
                         ],
                         fail_silently=True,
@@ -95,7 +95,7 @@ def quote(request):
                         from_email=getattr(settings, "DEFAULT_FROM_EMAIL", email),
                         recipient_list=[
                             getattr(
-                                settings, "CONTACT_EMAIL", "contact@tamambusiness.com"
+                                settings, "CONTACT_EMAIL", "papymvulazana@gmail.com"
                             )
                         ],
                         fail_silently=True,
