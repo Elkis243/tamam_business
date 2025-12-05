@@ -1,0 +1,190 @@
+{% load static %}
+<nav class="navbar navbar-expand-lg navbar-improved fixed-top">
+  <div class="container">
+    <!-- Logo -->
+    <a href="{% url 'home' %}" class="navbar-brand d-flex align-items-center">
+      <img src="{% static 'images/logo.png' %}" alt="Tamam Business" height="45" />
+    </a>
+
+    <!-- Bouton toggle mobile -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Menu -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto align-items-center">
+        <li class="nav-item">
+          <a class="nav-link {% if page == 'Home' %}active{% endif %}" href="{% url 'home' %}">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link {% if page == 'Services' %}active{% endif %}" href="{% url 'services' %}">Services</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link {% if page == 'Products' %}active{% endif %}" href="{% url 'products' %}">Produits</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link {% if page == 'About' %}active{% endif %}" href="{% url 'about' %}">À propos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link {% if page == 'Contact' %}active{% endif %}" href="{% url 'contact' %}">Contact</a>
+        </li>
+        <li class="nav-item ms-2">
+          <a class="nav-link btn-nav-cta" href="{% url 'quote' %}">Demander un devis</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<style>
+  .navbar-improved {
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    padding: 0.875rem 0;
+    z-index: 1030;
+    transition: all 0.3s ease;
+  }
+
+  .navbar-improved.scrolled {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+    background: rgba(255, 255, 255, 0.99);
+  }
+
+  .navbar-improved .navbar-brand {
+    font-weight: 700;
+    font-size: 1.3rem;
+    color: #2c3e50;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s ease;
+  }
+
+  .navbar-improved .navbar-brand:hover {
+    transform: translateY(-2px);
+  }
+
+  .navbar-improved .nav-link {
+    color: #495057;
+    font-weight: 500;
+    padding: 0.625rem 1.25rem;
+    margin: 0 0.15rem;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    position: relative;
+  }
+
+  .navbar-improved .nav-link:hover {
+    color: #667eea;
+    background: rgba(102, 126, 234, 0.1);
+  }
+
+  .navbar-improved .nav-link.active {
+    color: #667eea;
+    font-weight: 600;
+    background: rgba(102, 126, 234, 0.15);
+  }
+
+  .navbar-improved .btn-nav-cta {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white !important;
+    border-radius: 6px;
+    padding: 0.625rem 1.5rem;
+    margin-left: 0.5rem;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+    transition: all 0.3s ease;
+  }
+
+  .navbar-improved .btn-nav-cta:hover {
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+    color: white !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(102, 126, 234, 0.4);
+  }
+
+  .navbar-improved .btn-nav-cta.active {
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+    color: white !important;
+  }
+
+  .navbar-toggler {
+    border: none;
+    padding: 0.375rem 0.5rem;
+    border-radius: 6px;
+    transition: background 0.3s ease;
+  }
+
+  .navbar-toggler:hover {
+    background: rgba(102, 126, 234, 0.1);
+  }
+
+  .navbar-toggler:focus {
+    box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+  }
+
+  .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%2844, 62, 80, 0.85%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  }
+
+  @media (max-width: 991px) {
+    .navbar-improved {
+      padding: 0.75rem 0;
+    }
+
+    .navbar-improved .navbar-collapse {
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(0, 0, 0, 0.08);
+    }
+
+    .navbar-improved .nav-item {
+      margin-bottom: 0.5rem;
+    }
+
+    .navbar-improved .nav-link {
+      padding: 0.75rem 1rem;
+    }
+
+    .navbar-improved .btn-nav-cta {
+      margin-left: 0;
+      margin-top: 0.5rem;
+      display: block;
+      text-align: center;
+    }
+  }
+</style>
+
+<script>
+  // Effet de scroll sur la navbar
+  window.addEventListener("scroll", function () {
+    const navbar = document.querySelector(".navbar-improved");
+    if (navbar) {
+      if (window.scrollY > 20) {
+        navbar.classList.add("scrolled");
+      } else {
+        navbar.classList.remove("scrolled");
+      }
+    }
+  });
+
+  // Fermer le menu mobile après clic sur un lien
+  document.addEventListener("DOMContentLoaded", function () {
+    const navLinks = document.querySelectorAll(".navbar-improved .nav-link");
+    const navbarCollapse = document.querySelector(".navbar-collapse");
+
+    navLinks.forEach((link) => {
+      link.addEventListener("click", function () {
+        if (window.innerWidth < 992) {
+          const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
+          if (bsCollapse) {
+            bsCollapse.hide();
+          }
+        }
+      });
+    });
+  });
+</script>

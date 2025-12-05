@@ -1,0 +1,465 @@
+/* ============================================
+   Variables CSS - Couleurs harmonisées
+   ============================================ */
+:root {
+    --primary-color: #667eea;
+    --primary-dark: #764ba2;
+    --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --text-dark: #2c3e50;
+    --text-muted: #6c757d;
+    --bg-light: #f8f9fa;
+    --white: #ffffff;
+    --shadow: rgba(0, 0, 0, 0.1);
+}
+
+/* ============================================
+   Base & Reset
+   ============================================ */
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    font-size: 13px;
+    letter-spacing: 0.2px;
+}
+
+p {
+    font-family: "Space Grotesk", sans-serif;
+}
+
+/* ============================================
+   Hero Carousel (Page d'accueil)
+   ============================================ */
+.hero-carousel {
+    height: 80vh;
+}
+
+.carousel-item {
+    height: 85vh;
+    background-size: cover;
+    background-position: center;
+}
+
+#slide1 {
+    background-color: #000;
+    background-image: linear-gradient(rgba(21, 34, 26, 0.776), rgba(7, 34, 59, 0.888)),
+        url("../images/header.webp");
+    background-position: center 0%;
+}
+
+#slide2 {
+    background-color: #000;
+    background-image: linear-gradient(rgba(21, 34, 26, 0.776), rgba(7, 34, 59, 0.888)),
+        url("../images/chute_eau.webp");
+}
+
+#slide3 {
+    background-color: #000;
+    background-image: linear-gradient(rgba(21, 34, 26, 0.776), rgba(7, 34, 59, 0.888)),
+        url("../images/ligne_haute_tension.webp");
+}
+
+.carousel-indicators {
+    bottom: 40px;
+}
+
+.carousel-indicators [data-bs-target] {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: none;
+}
+
+.carousel-indicators .active {
+    background-color: var(--primary-color);
+}
+
+.carousel-caption {
+    top: 50%;
+    transform: translateY(-50%);
+    left: 12%;
+    right: auto;
+    bottom: auto;
+    text-align: left;
+    position: absolute;
+}
+
+/* ============================================
+   Page Hero Sections
+   ============================================ */
+.bg-primary {
+    background: var(--primary-gradient) !important;
+}
+
+.page-hero {
+    background: var(--primary-gradient);
+    position: relative;
+    overflow: hidden;
+}
+
+.page-hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    opacity: 0.3;
+}
+
+.page-hero .container {
+    position: relative;
+    z-index: 1;
+}
+
+.page-hero h1 {
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.page-hero .lead {
+    opacity: 0.95;
+}
+
+/* ============================================
+   Boutons CTA harmonisés
+   ============================================ */
+.btn-primary {
+    background: var(--primary-gradient);
+    border: none;
+    color: var(--white);
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-color) 100%);
+    color: var(--white);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(102, 126, 234, 0.4);
+}
+
+.btn-outline-primary {
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    background: transparent;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-primary:hover {
+    background: var(--primary-gradient);
+    border-color: var(--primary-color);
+    color: var(--white);
+    transform: translateY(-2px);
+}
+
+.btn-arrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.btn-arrow i {
+    transition: transform 0.3s ease;
+}
+
+.btn-arrow:hover i {
+    transform: translateX(5px);
+}
+
+/* ============================================
+   Footer harmonisé
+   ============================================ */
+.bg-footer {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.bg-footer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 20% 50%, rgba(102, 126, 234, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(118, 75, 162, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.bg-footer .container {
+    position: relative;
+    z-index: 1;
+}
+
+.bg-footer a {
+    transition: all 0.3s ease;
+}
+
+.bg-footer a:hover {
+    color: var(--primary-color) !important;
+    transform: translateX(3px);
+}
+
+/* ============================================
+   Utilitaires de couleur
+   ============================================ */
+.text-color {
+    color: var(--text-dark);
+}
+
+.bg-color {
+    background: var(--primary-gradient);
+    color: var(--white);
+}
+
+/* ============================================
+   Icônes Bootstrap harmonisées
+   ============================================ */
+.text-primary {
+    color: var(--primary-color) !important;
+}
+
+.bi.text-primary,
+i.text-primary {
+    color: var(--primary-color) !important;
+}
+
+/* Icônes dans les services */
+.service-icon i,
+.service-card-modern .service-icon i,
+.feature-icon i,
+.feature-icon-large i {
+    color: var(--primary-color);
+}
+
+/* Icônes de check */
+.bi-check,
+.bi-check-circle,
+.bi-check-circle-fill {
+    color: var(--primary-color);
+}
+
+/* Icônes de flèches */
+.bi-arrow-right,
+.bi-arrow-right-short,
+.bi-chevron-right {
+    color: var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+a:hover .bi-arrow-right,
+a:hover .bi-arrow-right-short,
+a:hover .bi-chevron-right {
+    transform: translateX(3px);
+    color: var(--primary-dark);
+}
+
+/* Icônes dans les cartes de contact */
+.contact-icon i {
+    color: var(--primary-color);
+}
+
+/* Icônes de témoignages */
+.testimonial-avatar i {
+    color: var(--white);
+}
+
+/* Icônes dans le footer */
+.bg-footer .bi {
+    transition: color 0.3s ease;
+}
+
+.bg-footer a:hover .bi {
+    color: var(--primary-color) !important;
+}
+
+/* Icônes de produits */
+.product-card .bi {
+    color: var(--text-muted);
+    transition: color 0.3s ease;
+}
+
+.product-card:hover .bi {
+    color: var(--primary-color);
+}
+
+/* Icônes dans les boutons */
+.btn-primary .bi,
+.btn-outline-primary .bi {
+    transition: transform 0.3s ease;
+}
+
+.btn-primary:hover .bi,
+.btn-outline-primary:hover .bi {
+    transform: translateX(3px);
+}
+
+/* Icônes de statut (check, star, etc.) */
+.bi-star-fill.text-warning {
+    color: #ffc107 !important;
+}
+
+.bi-check-circle-fill.text-primary {
+    color: var(--primary-color) !important;
+}
+
+/* Icônes dans les liens */
+a .bi {
+    transition: all 0.3s ease;
+}
+
+a:hover .bi {
+    color: var(--primary-color);
+}
+
+/* Icônes dans les sections "Pourquoi nous" */
+.feature-icon i,
+.feature-icon-large i {
+    color: var(--primary-color);
+    transition: transform 0.3s ease;
+}
+
+.service-card-modern:hover .service-icon i,
+.feature-icon:hover i,
+.feature-icon-large:hover i {
+    transform: scale(1.1);
+}
+
+/* ============================================
+   Cards & Services
+   ============================================ */
+.service-card {
+    padding: 25px;
+    box-shadow: 0 5px 15px var(--shadow);
+    border-top: 3px solid var(--primary-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.project-card {
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.project-card img {
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover img {
+    transform: scale(1.05);
+}
+
+/* ============================================
+   Loader
+   ============================================ */
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.95);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease-out;
+}
+
+.loading-overlay.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.loading-image {
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.7;
+        transform: scale(0.95);
+    }
+}
+
+/* ============================================
+   Background Images
+   ============================================ */
+.bg-image {
+    background-image: linear-gradient(rgba(33, 84, 141, 0.8), rgba(17, 78, 136, 0)),
+        url("../images/about.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100%;
+    min-height: 300px;
+}
+
+.bg-image-other {
+    background-image: linear-gradient(rgba(33, 84, 141, 0.8), rgba(17, 78, 136, 0)),
+        url("../images/twiga1.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100%;
+    min-height: 300px;
+}
+
+/* ============================================
+   Scroll margin pour ancres
+   ============================================ */
+#services {
+    scroll-margin-top: 80px;
+}
+
+/* ============================================
+   Responsive
+   ============================================ */
+@media (max-width: 768px) {
+    .hero-carousel {
+        height: 65vh;
+    }
+
+    .carousel-item {
+        height: 70vh;
+    }
+
+    .carousel-caption {
+        left: 5%;
+        right: 5%;
+        top: 40%;
+        transform: translateY(-40%);
+        font-size: 0.9rem;
+    }
+
+    .page-hero {
+        padding: 3rem 0 !important;
+    }
+    
+    .page-hero h1 {
+        font-size: 2rem;
+    }
+    
+    .page-hero .lead {
+        font-size: 1rem;
+    }
+}

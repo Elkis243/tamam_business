@@ -1,0 +1,90 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <!-- Encodage & responsive -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Titre de la page -->
+    <title>Tamam Business</title>
+    <!-- SEO : Meta Description & Keywords -->
+    <meta name="description" content="Tamam Business, spécialisée dans le commerce général. Votre partenaire de confiance pour tous vos besoins commerciaux et professionnels." />
+
+    <meta name="keywords" content="Tamam Business, commerce général, import export, distribution, vente en gros, vente au détail, entreprise, commerce" />
+    <meta name="author" content="Tamam Business" />
+
+    <!-- Open Graph pour les réseaux sociaux -->
+    <meta property="og:title" content="{{ page|default:" Tamam Business" }}" />
+    <meta property="og:description" content="Tamam Business, spécialisée dans le commerce général. Votre partenaire de confiance pour tous vos besoins commerciaux et professionnels." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://{{ request.get_host }}{{ request.path }}" />
+    <meta property="og:image" content="https://{{ request.get_host }}{% static 'images/1200x630.jpg' %}" />
+    <meta property="og:image:alt" content="Site officiel de Tamam Business" />
+    <meta name="twitter:image" content="https://{{ request.get_host }}{% static 'images/600x600.jpg' %}" />
+    <meta name="twitter:image:alt" content="Site officiel de Tamam Business" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon" />
+    <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon" />
+    <!-- Pour les appareils Apple -->
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'images/apple-touch-icon.png' %}" />
+    <!-- Pour Android/Chrome -->
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'images/favicon-32x32.png' %}" />
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/favicon-16x16.png' %}" />
+    <link rel="manifest" href="{% static 'site.webmanifest' %}" />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://{{ request.get_host }}/" />
+    <!-- Bootstrap & Icônes -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <!-- Fonts Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet" />
+    <!-- Style CSS personnalisé -->
+    <link href="{% static 'style/index.css' %}" rel="stylesheet" />
+    <!-- Sal.js (Scroll Animation Library) -->
+    <link rel="stylesheet" href="https://unpkg.com/sal.js/dist/sal.css" />
+  </head>
+
+  <body style="padding-top: 80px">
+    <div id="loading" class="loading-overlay">
+      <img src="{% static 'images/animate.gif' %}" alt="Chargement..." class="loading-image" width="150" />
+    </div>
+    {% block base %} {% endblock base %}
+    <script src="{% static 'js/loader.js' %}"></script>
+    <!-- Bootstrap JS -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/sal.js/dist/sal.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Récupérer l'élément Offcanvas Bootstrap
+        const offcanvasElement = document.getElementById("offcanvasNavbar");
+
+        if (offcanvasElement) {
+          // Récupérer ou créer l'instance Bootstrap
+          const bsOffcanvas = bootstrap.Offcanvas.getOrCreateInstance(offcanvasElement);
+
+          // Récupérer le lien Services
+          const servicesLink = document.getElementById("services-link");
+
+          if (servicesLink) {
+            servicesLink.addEventListener("click", function () {
+              bsOffcanvas.hide();
+            });
+          }
+        }
+      });
+      sal({
+        threshold: 0.1,
+        once: false,
+        easing: "ease-in-out",
+      });
+    </script>
+  </body>
+</html>

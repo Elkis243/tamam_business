@@ -1,0 +1,99 @@
+{% extends "base.html" %}
+{% load static %}
+{% block base %}
+{% include "components/navbar.html" %}
+
+<!-- Hero Section -->
+<section class="page-hero bg-primary text-white py-5" style="margin-top: 80px;">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-8 mx-auto text-center">
+        <h1 class="display-4 fw-bold mb-3" data-sal="fade-up" data-sal-duration="600">Mentions Légales</h1>
+        <p class="lead mb-0" data-sal="fade-up" data-sal-duration="600" data-sal-delay="200">
+          Informations légales et réglementaires concernant Tamam Business.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-5">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        
+        <div class="mb-4">
+          <h2 class="h4 mb-3 fw-bold">1. Informations légales</h2>
+          <p class="text-muted">
+            Conformément aux dispositions de la loi n° 2004-575 du 21 juin 2004 pour la confiance en l'économie numérique, 
+            il est précisé aux utilisateurs du site Tamam Business l'identité des différents intervenants dans le cadre de 
+            sa réalisation et de son suivi.
+          </p>
+        </div>
+
+        <div class="mb-4">
+          <h2 class="h4 mb-3 fw-bold">2. Éditeur du site</h2>
+          <p class="text-muted">
+            <strong>Tamam Business</strong><br>
+            Adresse : Adresse de l'entreprise, Ville, Pays<br>
+            Téléphone : +243 000 000 000<br>
+            Email : contact@tamambusiness.com
+          </p>
+        </div>
+
+        <div class="mb-4">
+          <h2 class="h4 mb-3 fw-bold">3. Hébergement</h2>
+          <p class="text-muted">
+            Le site est hébergé par [Nom de l'hébergeur]<br>
+            Adresse : [Adresse de l'hébergeur]
+          </p>
+        </div>
+
+        <div class="mb-4">
+          <h2 class="h4 mb-3 fw-bold">4. Propriété intellectuelle</h2>
+          <p class="text-muted">
+            L'ensemble de ce site relève de la législation française et internationale sur le droit d'auteur et la propriété 
+            intellectuelle. Tous les droits de reproduction sont réservés, y compris pour les documents téléchargeables et 
+            les représentations iconographiques et photographiques.
+          </p>
+        </div>
+
+        <div class="mb-4">
+          <h2 class="h4 mb-3 fw-bold">5. Protection des données personnelles</h2>
+          <p class="text-muted">
+            Conformément à la loi "Informatique et Libertés" du 6 janvier 1978 modifiée, vous disposez d'un droit d'accès, 
+            de rectification et de suppression des données qui vous concernent. Vous pouvez exercer ce droit en nous 
+            contactant à l'adresse : contact@tamambusiness.com
+          </p>
+        </div>
+
+        <div class="mb-4">
+          <h2 class="h4 mb-3 fw-bold">6. Cookies</h2>
+          <p class="text-muted">
+            Le site peut être amené à utiliser des cookies pour améliorer l'expérience utilisateur. 
+            Vous pouvez configurer votre navigateur pour refuser les cookies.
+          </p>
+        </div>
+
+        <div class="mb-4">
+          <h2 class="h4 mb-3 fw-bold">7. Limitation de responsabilité</h2>
+          <p class="text-muted">
+            Tamam Business ne pourra être tenu responsable des dommages directs et indirects causés au matériel de 
+            l'utilisateur, lors de l'accès au site, et résultant soit de l'utilisation d'un matériel ne répondant pas 
+            aux spécifications, soit de l'apparition d'un bug ou d'une incompatibilité.
+          </p>
+        </div>
+
+        <div class="text-center mt-5">
+          <a href="{% url 'home' %}" class="btn btn-outline-primary">
+            <i class="bi bi-arrow-left me-2"></i>Retour à l'accueil
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% include "components/footer.html" %}
+{% endblock base %}
+

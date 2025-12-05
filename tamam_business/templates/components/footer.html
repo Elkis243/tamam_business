@@ -1,0 +1,97 @@
+<footer class="text-white bg-footer p-5">
+  <div class="container">
+    <div class="row g-4">
+      <!-- À propos de l'entreprise -->
+      <div class="col-lg-4 col-md-6">
+        <p class="h5 lh-sm mb-3">Tamam Business</p>
+        <p class="mb-3">
+          Spécialisée dans le commerce général, Tamam Business est votre partenaire de confiance pour tous vos besoins commerciaux : import-export, distribution, vente en gros et au détail.
+        </p>
+        <div class="d-flex gap-3">
+          <a href="#" target="_blank" class="text-white" aria-label="Facebook"><i class="bi bi-facebook fs-4"></i></a>
+          <a href="#" target="_blank" class="text-white" aria-label="LinkedIn"><i class="bi bi-linkedin fs-4"></i></a>
+          <a href="#" target="_blank" class="text-white" aria-label="Twitter"><i class="bi bi-twitter-x fs-4"></i></a>
+          <a href="#" target="_blank" class="text-white" aria-label="Instagram"><i class="bi bi-instagram fs-4"></i></a>
+        </div>
+      </div>
+
+      <!-- Liens rapides -->
+      <div class="col-lg-2 col-md-6">
+        <p class="h5 lh-sm mb-3">Navigation</p>
+        <ul class="list-unstyled">
+          <li class="mb-2">
+            <a href="{% url 'home' %}" class="text-white text-decoration-none"><i class="bi bi-chevron-right"></i> Accueil</a>
+          </li>
+          <li class="mb-2">
+            <a href="{% url 'services' %}" class="text-white text-decoration-none"><i class="bi bi-chevron-right"></i> Services</a>
+          </li>
+          <li class="mb-2">
+            <a href="{% url 'products' %}" class="text-white text-decoration-none"><i class="bi bi-chevron-right"></i> Produits</a>
+          </li>
+          <li class="mb-2">
+            <a href="{% url 'about' %}" class="text-white text-decoration-none"><i class="bi bi-chevron-right"></i> À propos</a>
+          </li>
+          <li class="mb-2">
+            <a href="{% url 'contact' %}" class="text-white text-decoration-none"><i class="bi bi-chevron-right"></i> Contact</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Horaires d'ouverture -->
+      <div class="col-lg-3 col-md-6">
+        <p class="h5 lh-sm mb-3">Horaires d'ouverture</p>
+        <ul class="list-unstyled">
+          <li class="mb-2">
+            <i class="bi bi-clock"></i> <strong>Lundi - Vendredi</strong><br />
+            <span class="ms-4">08:00 - 18:00</span>
+          </li>
+          <li class="mb-2">
+            <i class="bi bi-clock"></i> <strong>Samedi</strong><br />
+            <span class="ms-4">09:00 - 13:00</span>
+          </li>
+          <li class="mb-2">
+            <i class="bi bi-clock"></i> <strong>Dimanche</strong><br />
+            <span class="ms-4">Fermé</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Coordonnées -->
+      <div class="col-lg-3 col-md-6">
+        <p class="h5 lh-sm mb-3">Contact</p>
+        <p class="mb-2">
+          <i class="bi bi-geo-alt-fill"></i>
+          <span
+            >Adresse de l'entreprise<br />
+            <span class="ms-4">Ville, Pays</span></span
+          >
+        </p>
+        <p class="mb-2">
+          <i class="bi bi-phone"></i>
+          <a href="tel:+243000000000" class="text-white text-decoration-none">+243 000 000 000</a>
+        </p>
+        <p class="mb-2">
+          <i class="bi bi-envelope"></i>
+          <a href="mailto:contact@tamambusiness.com" class="text-white text-decoration-none">contact@tamambusiness.com</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Copyright -->
+  <div class="border-top border-secondary mt-4 pt-3">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 text-center text-md-start">
+          <p class="mb-0">© 2025 Tamam Business. Tous droits réservés.</p>
+        </div>
+        <div class="col-md-6 text-center text-md-end">
+          <p class="mb-0">
+            <a href="{% url 'legal' %}" class="text-white text-decoration-none me-3">Mentions légales</a>
+            <a href="{% url 'privacy' %}" class="text-white text-decoration-none">Politique de confidentialité</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

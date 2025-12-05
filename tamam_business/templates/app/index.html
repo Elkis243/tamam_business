@@ -1,0 +1,481 @@
+{% extends "base.html" %} {% load static %} {% block base %} {% include "components/navbar.html" %}
+
+<!-- Hero Section -->
+<section class="hero-section position-relative overflow-hidden border-none border-opacity-20" style="min-height: 85vh; display: flex; align-items: center">
+  <div class="hero-background position-absolute top-0 start-0 w-100 h-100"></div>
+  <div class="container position-relative z-2">
+    <div class="row align-items-center min-vh-50 py-5">
+      <div class="col-lg-8 mx-auto text-center">
+        <div class="hero-content text-white">
+          <div class="hero-badge mb-4" data-sal="fade-up" data-sal-duration="600">
+            <span class="badge bg-white bg-opacity-20 text-black px-3 py-2 rounded-pill"> <i class="bi bi-star-fill me-2"></i>Votre partenaire de confiance </span>
+          </div>
+          <h1 class="display-4 fw-bold mb-4 lh-sm" data-sal="fade-up" data-sal-duration="600" data-sal-delay="100">Solutions de commerce général pour votre réussite</h1>
+          <p class="lead mb-4 text-white-50" data-sal="fade-up" data-sal-duration="600" data-sal-delay="200">
+            Tamam Business vous accompagne dans tous vos projets commerciaux avec une large gamme de produits de qualité, des services d'import-export et des solutions personnalisées adaptées à vos
+            besoins.
+          </p>
+          <div class="hero-buttons d-flex flex-wrap gap-3 justify-content-center" data-sal="fade-up" data-sal-duration="600" data-sal-delay="300">
+            <a href="{% url 'services' %}" class="btn btn-light px-4 shadow-sm">Découvrez nos services</a>
+            <a href="{% url 'contact' %}" class="btn btn-outline-light px-4"> Nous contacter </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-shape position-absolute bottom-0 start-0 w-100" style="z-index: 1; line-height: 0; overflow: hidden; margin-bottom: -1px">
+    <svg
+      viewBox="0 0 1440 120"
+      xmlns="http://www.w3.org/2000/svg"
+      preserveAspectRatio="none"
+      style="display: block; width: 100%; height: auto; vertical-align: bottom; line-height: 0; margin-bottom: -1px"
+    >
+      <path
+        d="M0 120L60 105C120 90 240 60 360 45C480 30 600 30 720 37.5C840 45 960 60 1080 67.5C1200 75 1320 75 1380 75L1440 75V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z"
+        fill="white"
+        stroke="none"
+        stroke-width="0"
+        shape-rendering="geometricPrecision"
+        style="display: block"
+      />
+    </svg>
+  </div>
+</section>
+
+<!-- Section Présentation Tamam Business -->
+<section id="about" class="py-5">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6" data-sal="fade-right" data-sal-duration="800">
+        <img src="{% static 'images/img1.webp' %}" alt="Tamam Business - À propos" class="img-fluid rounded-3 shadow-sm" style="height: 400px; object-fit: cover; width: 100%" />
+      </div>
+      <div class="col-lg-6" data-sal="fade-left" data-sal-duration="800">
+        <h2 class="h3 mb-4 fw-bold">À propos de Tamam Business</h2>
+        <p class="text-muted mb-3">
+          Tamam Business est une entreprise spécialisée dans le commerce général. Nous offrons une large gamme de produits de qualité adaptés aux besoins de nos clients, qu'il s'agisse de
+          particuliers, d'entreprises ou d'institutions.
+        </p>
+        <p class="text-muted mb-4">
+          Notre mission est de fournir des produits de qualité, fiables et des solutions commerciales personnalisées pour accompagner la réussite de nos partenaires dans leurs projets.
+        </p>
+        <div class="row g-3 mb-4">
+          <div class="col-md-6">
+            <div class="d-flex align-items-start">
+              <div class="flex-shrink-0 me-3">
+                <i class="bi bi-check-circle-fill text-primary fs-4"></i>
+              </div>
+              <div>
+                <h5 class="fw-bold mb-1">Expertise reconnue</h5>
+                <p class="text-muted small mb-0">Une expertise reconnue dans le commerce général, l'import-export et la distribution.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="d-flex align-items-start">
+              <div class="flex-shrink-0 me-3">
+                <i class="bi bi-check-circle-fill text-primary fs-4"></i>
+              </div>
+              <div>
+                <h5 class="fw-bold mb-1">Approche personnalisée</h5>
+                <p class="text-muted small mb-0">Des solutions adaptées à chaque client, quelle que soit la taille de votre projet.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="d-flex align-items-start">
+              <div class="flex-shrink-0 me-3">
+                <i class="bi bi-check-circle-fill text-primary fs-4"></i>
+              </div>
+              <div>
+                <h5 class="fw-bold mb-1">Engagement qualité</h5>
+                <p class="text-muted small mb-0">Nous sélectionnons rigoureusement nos produits et services pour garantir votre satisfaction.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="d-flex align-items-start">
+              <div class="flex-shrink-0 me-3">
+                <i class="bi bi-check-circle-fill text-primary fs-4"></i>
+              </div>
+              <div>
+                <h5 class="fw-bold mb-1">Support client dédié</h5>
+                <p class="text-muted small mb-0">Une équipe à votre écoute pour vous accompagner à chaque étape de votre projet.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="{% url 'about' %}" class="btn btn-outline-primary"> En savoir plus <i class="bi bi-arrow-right ms-2"></i> </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Section Services -->
+<section id="services" class="py-5 bg-light">
+  <div class="container">
+    <div class="row mb-5">
+      <div class="col-lg-8 mx-auto text-center">
+        <h2 class="h3 mb-3 fw-bold">Découvrez nos services de commerce général</h2>
+        <p class="text-muted">Nous offrons des solutions complètes en commerce général pour répondre à tous vos besoins professionnels et personnels.</p>
+      </div>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-3" data-sal="zoom-in" data-sal-duration="600" data-sal-delay="100">
+        <div class="service-card-modern h-100 p-4 bg-white rounded-3 shadow-sm">
+          <div class="service-icon mb-3">
+            <i class="bi bi-cart-check fs-1 text-primary"></i>
+          </div>
+          <h4 class="h5 fw-bold mb-3">Commerce Général</h4>
+          <p class="text-muted small mb-3">Vente de produits divers, approvisionnement en gros et détail, importation et exportation.</p>
+          <a href="{% url 'services' %}" class="text-primary text-decoration-none small fw-semibold"> En savoir plus <i class="bi bi-arrow-right ms-1"></i> </a>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3" data-sal="zoom-in" data-sal-duration="600" data-sal-delay="200">
+        <div class="service-card-modern h-100 p-4 bg-white rounded-3 shadow-sm">
+          <div class="service-icon mb-3">
+            <i class="bi bi-briefcase fs-1 text-primary"></i>
+          </div>
+          <h4 class="h5 fw-bold mb-3">Import-Export</h4>
+          <p class="text-muted small mb-3">Importation et exportation de produits, gestion des douanes et logistique internationale.</p>
+          <a href="{% url 'services' %}" class="text-primary text-decoration-none small fw-semibold"> En savoir plus <i class="bi bi-arrow-right ms-1"></i> </a>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3" data-sal="zoom-in" data-sal-duration="600" data-sal-delay="300">
+        <div class="service-card-modern h-100 p-4 bg-white rounded-3 shadow-sm">
+          <div class="service-icon mb-3">
+            <i class="bi bi-truck fs-1 text-primary"></i>
+          </div>
+          <h4 class="h5 fw-bold mb-3">Distribution & Vente</h4>
+          <p class="text-muted small mb-3">Vente en gros et au détail, distribution de produits, gestion de stocks et approvisionnement.</p>
+          <a href="{% url 'services' %}" class="text-primary text-decoration-none small fw-semibold"> En savoir plus <i class="bi bi-arrow-right ms-1"></i> </a>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3" data-sal="zoom-in" data-sal-duration="600" data-sal-delay="400">
+        <div class="service-card-modern h-100 p-4 bg-white rounded-3 shadow-sm">
+          <div class="service-icon mb-3">
+            <i class="bi bi-sliders fs-1 text-primary"></i>
+          </div>
+          <h4 class="h5 fw-bold mb-3">Solutions Commerciales</h4>
+          <p class="text-muted small mb-3">Devis personnalisés, accompagnement commercial, conseil en approvisionnement et service client réactif.</p>
+          <a href="{% url 'services' %}" class="text-primary text-decoration-none small fw-semibold"> En savoir plus <i class="bi bi-arrow-right ms-1"></i> </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Section Produits -->
+<section id="products" class="py-5">
+  <div class="container">
+    <div class="row mb-5">
+      <div class="col-lg-8 mx-auto text-center">
+        <h2 class="h3 mb-3 fw-bold">Découvrez notre gamme de produits</h2>
+        <p class="text-muted">Des produits de qualité, sélectionnés avec soin pour répondre à tous vos besoins professionnels et personnels.</p>
+      </div>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4" data-sal="fade-up" data-sal-duration="600" data-sal-delay="100">
+        <div class="product-card h-100 border rounded-3 overflow-hidden bg-white shadow-sm">
+          <div class="product-image bg-light" style="height: 200px; overflow: hidden">
+            <img src="{% static 'images/img4.webp' %}" alt="Produits Professionnels" class="w-100 h-100" style="object-fit: cover" />
+          </div>
+          <div class="p-4">
+            <h4 class="h5 fw-bold mb-2">Produits Professionnels</h4>
+            <p class="text-muted small mb-3">Une large gamme de produits professionnels pour tous vos besoins commerciaux.</p>
+            <a href="{% url 'products' %}" class="btn btn-sm btn-outline-primary">Voir plus</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4" data-sal="fade-up" data-sal-duration="600" data-sal-delay="200">
+        <div class="product-card h-100 border rounded-3 overflow-hidden bg-white shadow-sm">
+          <div class="product-image bg-light" style="height: 200px; overflow: hidden">
+            <img src="{% static 'images/img2.webp' %}" alt="Matériels & Équipements" class="w-100 h-100" style="object-fit: cover" />
+          </div>
+          <div class="p-4">
+            <h4 class="h5 fw-bold mb-2">Matériels & Équipements</h4>
+            <p class="text-muted small mb-3">Équipements de qualité pour professionnels et particuliers.</p>
+            <a href="{% url 'products' %}" class="btn btn-sm btn-outline-primary">Voir plus</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4" data-sal="fade-up" data-sal-duration="600" data-sal-delay="300">
+        <div class="product-card h-100 border rounded-3 overflow-hidden bg-white shadow-sm">
+          <div class="product-image bg-light" style="height: 200px; overflow: hidden">
+            <img src="{% static 'images/img3.webp' %}" alt="Fournitures Diverses" class="w-100 h-100" style="object-fit: cover" />
+          </div>
+          <div class="p-4">
+            <h4 class="h5 fw-bold mb-2">Fournitures Diverses</h4>
+            <p class="text-muted small mb-3">Tous vos besoins en fournitures et consommables au même endroit.</p>
+            <a href="{% url 'products' %}" class="btn btn-sm btn-outline-primary">Voir plus</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Section Pourquoi Nous -->
+<section id="why-us" class="py-5 bg-primary text-white">
+  <div class="container">
+    <div class="row mb-5">
+      <div class="col-lg-8 mx-auto text-center">
+        <h2 class="h3 mb-3 fw-bold text-white">Pourquoi choisir Tamam Business ?</h2>
+        <p class="text-white-50">Votre satisfaction guide notre service fiable, efficace et personnalisé au quotidien.</p>
+      </div>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-3" data-sal="fade-up" data-sal-duration="600" data-sal-delay="100">
+        <div class="text-center">
+          <div class="feature-icon mb-3">
+            <i class="bi bi-check-circle-fill fs-1 text-white"></i>
+          </div>
+          <h4 class="h5 fw-bold mb-2 text-white">Qualité Garantie</h4>
+          <p class="text-white-50 small">Des produits et services de qualité supérieure, sélectionnés avec soin pour répondre à vos attentes.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3" data-sal="fade-up" data-sal-duration="600" data-sal-delay="200">
+        <div class="text-center">
+          <div class="feature-icon mb-3">
+            <i class="bi bi-person-check fs-1 text-white"></i>
+          </div>
+          <h4 class="h5 fw-bold mb-2 text-white">Solutions Personnalisées</h4>
+          <p class="text-white-50 small">Des offres adaptées à vos besoins spécifiques, quelle que soit la taille de votre projet ou entreprise.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3" data-sal="fade-up" data-sal-duration="600" data-sal-delay="300">
+        <div class="text-center">
+          <div class="feature-icon mb-3">
+            <i class="bi bi-speedometer2 fs-1 text-white"></i>
+          </div>
+          <h4 class="h5 fw-bold mb-2 text-white">Réactivité</h4>
+          <p class="text-white-50 small">Un service réactif et efficace pour répondre rapidement à vos demandes et respecter vos délais.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3" data-sal="fade-up" data-sal-duration="600" data-sal-delay="400">
+        <div class="text-center">
+          <div class="feature-icon mb-3">
+            <i class="bi bi-people fs-1 text-white"></i>
+          </div>
+          <h4 class="h5 fw-bold mb-2 text-white">Équipe d'Experts</h4>
+          <p class="text-white-50 small">Des professionnels qualifiés qui comprennent vos besoins et vous accompagnent dans vos projets.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Section Témoignages -->
+<section id="testimonials" class="py-5">
+  <div class="container">
+    <div class="row mb-5">
+      <div class="col-lg-8 mx-auto text-center">
+        <h2 class="h3 mb-3 fw-bold">Découvrez les témoignages de nos clients</h2>
+        <p class="text-muted">La satisfaction de nos clients est notre priorité. Lisez leurs retours d'expérience et leurs avis sur nos services.</p>
+      </div>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4" data-sal="fade-up" data-sal-duration="600" data-sal-delay="100">
+        <div class="testimonial-card h-100 p-4 bg-white rounded-3 shadow-sm border">
+          <div class="d-flex align-items-center mb-3">
+            <div class="testimonial-avatar bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 50px; height: 50px">
+              <i class="bi bi-person-fill"></i>
+            </div>
+            <div>
+              <h5 class="mb-0 fw-bold">Patrice Kabila</h5>
+              <p class="text-muted small mb-0">Directeur Commercial</p>
+            </div>
+          </div>
+          <div class="mb-3">
+            <i class="bi bi-star-fill text-warning"></i>
+            <i class="bi bi-star-fill text-warning"></i>
+            <i class="bi bi-star-fill text-warning"></i>
+            <i class="bi bi-star-fill text-warning"></i>
+            <i class="bi bi-star-fill text-warning"></i>
+          </div>
+          <p class="text-muted small mb-0">"Tamam Business a su répondre à tous nos besoins avec professionnalisme. Leur équipe est réactive et les produits sont de qualité."</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4" data-sal="fade-up" data-sal-duration="600" data-sal-delay="200">
+        <div class="testimonial-card h-100 p-4 bg-white rounded-3 shadow-sm border">
+          <div class="d-flex align-items-center mb-3">
+            <div class="testimonial-avatar bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 50px; height: 50px">
+              <i class="bi bi-person-fill"></i>
+            </div>
+            <div>
+              <h5 class="mb-0 fw-bold">Aicha Mukendi</h5>
+              <p class="text-muted small mb-0">Entrepreneuse</p>
+            </div>
+          </div>
+          <div class="mb-3">
+            <i class="bi bi-star-fill text-warning"></i>
+            <i class="bi bi-star-fill text-warning"></i>
+            <i class="bi bi-star-fill text-warning"></i>
+            <i class="bi bi-star-fill text-warning"></i>
+            <i class="bi bi-star-fill text-warning"></i>
+          </div>
+          <p class="text-muted small mb-0">"Service client exceptionnel et solutions adaptées à mes besoins. Je recommande vivement Tamam Business pour leur professionnalisme."</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4" data-sal="fade-up" data-sal-duration="600" data-sal-delay="300">
+        <div class="testimonial-card h-100 p-4 bg-white rounded-3 shadow-sm border">
+          <div class="d-flex align-items-center mb-3">
+            <div class="testimonial-avatar bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 50px; height: 50px">
+              <i class="bi bi-person-fill"></i>
+            </div>
+            <div>
+              <h5 class="mb-0 fw-bold">Joseph Tshisekedi</h5>
+              <p class="text-muted small mb-0">Gérant d'entreprise</p>
+            </div>
+          </div>
+          <div class="mb-3">
+            <i class="bi bi-star-fill text-warning"></i>
+            <i class="bi bi-star-fill text-warning"></i>
+            <i class="bi bi-star-fill text-warning"></i>
+            <i class="bi bi-star-fill text-warning"></i>
+            <i class="bi bi-star-fill text-warning"></i>
+          </div>
+          <p class="text-muted small mb-0">"Un partenaire de confiance qui comprend nos enjeux et propose des solutions efficaces. Très satisfait de notre collaboration."</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero-section {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #667eea 100%);
+    background-size: 200% 200%;
+    animation: gradientShift 15s ease infinite;
+  }
+
+  @keyframes gradientShift {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  .hero-background::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%), radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 40% 20%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  .hero-background::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: repeating-linear-gradient(45deg, transparent, transparent 2px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.03) 4px);
+    pointer-events: none;
+  }
+
+  .hero-shape {
+    z-index: 1;
+  }
+
+  .hero-shape {
+    line-height: 0;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    margin-bottom: -1px;
+  }
+
+  .hero-shape svg {
+    border: none;
+    outline: none;
+    margin: 0;
+    padding: 0;
+    margin-bottom: -1px;
+    vertical-align: bottom;
+    line-height: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    image-rendering: auto;
+    overflow: hidden;
+  }
+
+  .hero-shape path {
+    border: none;
+    outline: none;
+    stroke: none;
+    stroke-width: 0;
+    shape-rendering: geometricPrecision;
+    display: block;
+  }
+
+  .min-vh-50 {
+    min-height: 50vh;
+  }
+
+  .hero-badge .badge {
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+
+  .service-card-modern {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .service-card-modern:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1) !important;
+  }
+
+  .product-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1) !important;
+  }
+
+  .testimonial-card {
+    transition: transform 0.3s ease;
+  }
+
+  .testimonial-card:hover {
+    transform: translateY(-3px);
+  }
+
+  .service-icon,
+  .feature-icon {
+    transition: transform 0.3s ease;
+  }
+
+  .service-card-modern:hover .service-icon,
+  .feature-icon:hover {
+    transform: scale(1.1);
+  }
+
+  @media (max-width: 768px) {
+    .hero-section {
+      min-height: 500px;
+    }
+
+    .hero-section h1 {
+      font-size: 2rem;
+    }
+
+    .hero-section .lead {
+      font-size: 1rem;
+    }
+  }
+</style>
+
+{% include "components/footer.html" %} {% endblock base %}

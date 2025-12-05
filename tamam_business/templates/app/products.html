@@ -1,0 +1,124 @@
+{% extends "base.html" %} {% load static %} {% block base %} {% include "components/navbar.html" %}
+
+<!-- Hero Section -->
+<section class="page-hero bg-primary text-white py-5" style="margin-top: 80px">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-8 mx-auto text-center">
+        <h1 class="display-4 fw-bold mb-3" data-sal="fade-up" data-sal-duration="600">Nos Produits</h1>
+        <p class="lead mb-0" data-sal="fade-up" data-sal-duration="600" data-sal-delay="200">Découvrez notre gamme de produits de qualité, sélectionnés avec soin pour répondre à vos besoins.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-5">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4" data-sal="fade-up" data-sal-duration="600" data-sal-delay="100">
+        <div class="product-card h-100 border rounded-3 overflow-hidden bg-white shadow-sm">
+          <div class="product-image bg-light" style="height: 200px; overflow: hidden">
+            <img src="{% static 'images/img4.webp' %}" alt="Produits Professionnels" class="w-100 h-100" style="object-fit: cover" />
+          </div>
+          <div class="p-4">
+            <h3 class="h5 fw-bold mb-2">Produits Professionnels</h3>
+            <p class="text-muted small mb-3">Une large gamme de produits professionnels pour tous vos besoins commerciaux et industriels.</p>
+            <ul class="text-muted small list-unstyled mb-3">
+              <li><i class="bi bi-check text-primary me-2"></i>Matériels professionnels</li>
+              <li><i class="bi bi-check text-primary me-2"></i>Fournitures de bureau</li>
+              <li><i class="bi bi-check text-primary me-2"></i>Équipements techniques</li>
+            </ul>
+            <a href="{% url 'quote' %}" class="btn btn-sm btn-outline-primary w-100">Demander un devis</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4" data-sal="fade-up" data-sal-duration="600" data-sal-delay="200">
+        <div class="product-card h-100 border rounded-3 overflow-hidden bg-white shadow-sm">
+          <div class="product-image bg-light" style="height: 200px; overflow: hidden">
+            <img src="{% static 'images/img2.webp' %}" alt="Matériels & Équipements" class="w-100 h-100" style="object-fit: cover" />
+          </div>
+          <div class="p-4">
+            <h3 class="h5 fw-bold mb-2">Matériels & Équipements</h3>
+            <p class="text-muted small mb-3">Équipements de qualité pour professionnels et particuliers, du matériel standard au sur-mesure.</p>
+            <ul class="text-muted small list-unstyled mb-3">
+              <li><i class="bi bi-check text-primary me-2"></i>Outillage professionnel</li>
+              <li><i class="bi bi-check text-primary me-2"></i>Machines et équipements</li>
+              <li><i class="bi bi-check text-primary me-2"></i>Pièces de rechange</li>
+            </ul>
+            <a href="{% url 'quote' %}" class="btn btn-sm btn-outline-primary w-100">Demander un devis</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4" data-sal="fade-up" data-sal-duration="600" data-sal-delay="300">
+        <div class="product-card h-100 border rounded-3 overflow-hidden bg-white shadow-sm">
+          <div class="product-image bg-light" style="height: 200px; overflow: hidden">
+            <img src="{% static 'images/img3.webp' %}" alt="Fournitures Diverses" class="w-100 h-100" style="object-fit: cover" />
+          </div>
+          <div class="p-4">
+            <h3 class="h5 fw-bold mb-2">Fournitures Diverses</h3>
+            <p class="text-muted small mb-3">Tous vos besoins en fournitures et consommables au même endroit, avec un service de qualité.</p>
+            <ul class="text-muted small list-unstyled mb-3">
+              <li><i class="bi bi-check text-primary me-2"></i>Consommables</li>
+              <li><i class="bi bi-check text-primary me-2"></i>Fournitures générales</li>
+              <li><i class="bi bi-check text-primary me-2"></i>Articles divers</li>
+            </ul>
+            <a href="{% url 'quote' %}" class="btn btn-sm btn-outline-primary w-100">Demander un devis</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mt-5">
+      <div class="col-lg-10 mx-auto">
+        <div class="cta-section bg-primary text-white rounded-4 p-4 shadow-lg position-relative overflow-hidden">
+          <div class="position-absolute top-0 end-0 opacity-25" style="font-size: 100px; line-height: 1; transform: translate(20px, -20px);">
+            <i class="bi bi-search"></i>
+          </div>
+          <div class="row align-items-center position-relative">
+            <div class="col-lg-8 text-center text-lg-start mb-3 mb-lg-0">
+              <div class="d-flex align-items-center justify-content-center justify-content-lg-start mb-2">
+                <h3 class="h5 mb-0 fw-bold text-white">Vous ne trouvez pas ce que vous cherchez ?</h3>
+              </div>
+              <p class="mb-0 text-white-50">Contactez-nous pour discuter de vos besoins spécifiques. Nous pouvons vous proposer des solutions sur mesure adaptées à vos exigences.</p>
+            </div>
+            <div class="col-lg-4 text-center text-lg-end">
+              <a href="{% url 'quote' %}" class="btn btn-primary">
+                <i class="bi bi-telephone-fill me-2"></i>Demander un devis
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .product-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1) !important;
+  }
+
+  .cta-section {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  }
+
+  .btn-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+  }
+
+  .btn-primary:hover {
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+  }
+</style>
+
+{% include "components/footer.html" %} {% endblock base %}
