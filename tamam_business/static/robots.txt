@@ -20,5 +20,5 @@ Disallow: /*.xml$
 Disallow: /api/
 
 # Sitemap
-Sitemap: https://www.tamambusiness.com/sitemap.xml
+Sitemap: https://tamam.pythonanywhere.com/sitemap.xml
 

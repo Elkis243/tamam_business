@@ -149,7 +149,7 @@ def robots_txt(request):
     robots_content = """User-agent: *
 Allow: /
 Disallow: /admin/
-Sitemap: https://www.tamambusiness.com/sitemap.xml"""
+Sitemap: https://tamam.pythonanywhere.com/sitemap.xml"""
     return HttpResponse(robots_content, content_type="text/plain")
 
 
