@@ -77,22 +77,17 @@ def contact(request):
 
 @require_http_methods(["GET"])
 def robots_txt(request):
-    """Vue pour servir robots.txt"""
+    """Vue pour servir robots.txt dynamiquement"""
     from pathlib import Path
 
-    base_dir = Path(settings.BASE_DIR)
-    robots_path = base_dir / "tamam_business" / "static" / "robots.txt"
-
-    if robots_path.exists():
-        try:
-            with open(robots_path, "rb") as f:
-                return HttpResponse(f.read(), content_type="text/plain")
-        except Exception:
-            pass
-
-    # Fallback si le fichier n'existe pas
-    robots_content = """# robots.txt pour Tamam Business
-# https://www.tamam-business.com/robots.txt
+    # Obtenir le domaine actuel
+    host = request.get_host()
+    protocol = "https" if request.is_secure() else "http"
+    base_url = f"{protocol}://{host}"
+    
+    # Générer le robots.txt dynamiquement
+    robots_content = f"""# robots.txt pour Tamam Business
+# {base_url}/robots.txt
 
 User-agent: *
 Allow: /
@@ -108,29 +103,78 @@ Allow: /sitemap.xml
 Allow: /robots.txt
 
 # Sitemap
-Sitemap: https://www.tamam-business.com/sitemap.xml"""
-    return HttpResponse(robots_content, content_type="text/plain")
+Sitemap: {base_url}/sitemap.xml"""
+    
+    return HttpResponse(robots_content, content_type="text/plain; charset=utf-8")
 
 
 @require_http_methods(["GET"])
 def sitemap_xml(request):
-    """Vue pour servir sitemap.xml"""
+    """Vue pour servir sitemap.xml dynamiquement"""
     from pathlib import Path
-
-    base_dir = Path(settings.BASE_DIR)
-    sitemap_path = base_dir / "tamam_business" / "static" / "sitemap.xml"
-
-    if sitemap_path.exists():
-        try:
-            with open(sitemap_path, "rb") as f:
-                return HttpResponse(f.read(), content_type="application/xml")
-        except Exception:
-            pass
-
-    # Fallback si le fichier n'existe pas
+    from datetime import datetime
+    from django.urls import reverse
+    
+    # Obtenir le domaine actuel
+    host = request.get_host()
+    protocol = "https" if request.is_secure() else "http"
+    base_url = f"{protocol}://{host}"
+    
+    # Date actuelle au format ISO
+    current_date = datetime.now().strftime("%Y-%m-%d")
+    
+    # Générer le sitemap dynamiquement
+    sitemap_content = f'''<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+  
+  <!-- Page d'accueil -->
+  <url>
+    <loc>{base_url}/</loc>
+    <lastmod>{current_date}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <!-- Page À propos -->
+  <url>
+    <loc>{base_url}/about/</loc>
+    <lastmod>{current_date}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Page Services -->
+  <url>
+    <loc>{base_url}/services/</loc>
+    <lastmod>{current_date}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- Page Produits -->
+  <url>
+    <loc>{base_url}/products/</loc>
+    <lastmod>{current_date}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- Page Contact -->
+  <url>
+    <loc>{base_url}/contact/</loc>
+    <lastmod>{current_date}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+</urlset>'''
+    
     return HttpResponse(
-        '<?xml version="1.0" encoding="UTF-8"?><urlset></urlset>',
-        content_type="application/xml",
+        sitemap_content,
+        content_type="application/xml; charset=utf-8",
     )
 
 
