@@ -1,0 +1,101 @@
+{% extends "base.html" %}
+{% load static %}
+{% block base %}
+{% include "components/navbar.html" %}
+
+<!-- Hero Section -->
+<section class="page-hero bg-primary text-white py-5" style="margin-top: -35px; padding-top: 80px;">
+  <div class="container px-4">
+    <div class="row align-items-center">
+      <div class="col-lg-8 mx-auto text-center">
+        <div class="error-icon mb-4">
+          <i class="bi bi-exclamation-triangle-fill" style="font-size: 120px; opacity: 0.9;"></i>
+        </div>
+        <h1 class="display-1 fw-bold mb-3" data-sal="fade-up" data-sal-duration="600">404</h1>
+        <h2 class="h3 mb-3 fw-bold" data-sal="fade-up" data-sal-duration="600" data-sal-delay="100">Page non trouvée</h2>
+        <p class="lead mb-0" data-sal="fade-up" data-sal-duration="600" data-sal-delay="200">
+          Désolé, la page que vous recherchez n'existe pas ou a été déplacée.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-5">
+  <div class="container px-4">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 text-center">
+        <div class="error-content mb-5">
+          <p class="text-muted mb-4">
+            La page que vous essayez d'atteindre n'est pas disponible. Elle a peut-être été supprimée, 
+            renommée ou l'URL est incorrecte.
+          </p>
+          <div class="d-flex flex-wrap gap-3 justify-content-center">
+            <a href="{% url 'home' %}" class="btn btn-primary px-4">
+              <i class="bi bi-house-door me-2"></i>Retour à l'accueil
+            </a>
+            <a href="{% url 'contact' %}" class="btn btn-outline-primary px-4">
+              <i class="bi bi-envelope me-2"></i>Nous contacter
+            </a>
+          </div>
+        </div>
+
+        <div class="row g-4 mt-4">
+          <div class="col-md-4">
+            <div class="card border-0 shadow-sm h-100 text-center p-4">
+              <div class="mb-3">
+                <i class="bi bi-house-door-fill text-primary" style="font-size: 2.5rem;"></i>
+              </div>
+              <h5 class="fw-bold mb-2">Accueil</h5>
+              <p class="text-muted small mb-3">Retournez à la page d'accueil</p>
+              <a href="{% url 'home' %}" class="btn btn-sm btn-outline-primary">Visiter</a>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card border-0 shadow-sm h-100 text-center p-4">
+              <div class="mb-3">
+                <i class="bi bi-briefcase-fill text-primary" style="font-size: 2.5rem;"></i>
+              </div>
+              <h5 class="fw-bold mb-2">Services</h5>
+              <p class="text-muted small mb-3">Découvrez nos services</p>
+              <a href="{% url 'services' %}" class="btn btn-sm btn-outline-primary">Visiter</a>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card border-0 shadow-sm h-100 text-center p-4">
+              <div class="mb-3">
+                <i class="bi bi-box-seam-fill text-primary" style="font-size: 2.5rem;"></i>
+              </div>
+              <h5 class="fw-bold mb-2">Produits</h5>
+              <p class="text-muted small mb-3">Explorez nos produits</p>
+              <a href="{% url 'products' %}" class="btn btn-sm btn-outline-primary">Visiter</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .error-icon {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+
+  .error-content {
+    padding: 2rem 0;
+  }
+</style>
+
+{% include "components/footer.html" %}
+{% endblock base %}
+

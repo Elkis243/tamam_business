@@ -1,12 +1,31 @@
-{% extends "base.html" %} {% load static %} {% block base %} {% include "components/navbar.html" %}
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+<link href="{% static 'css/products.css' %}" rel="stylesheet" />
+{% endblock extra_css %}
+
+{% block base %}
+{% include "components/navbar.html" %}
 
 <!-- Hero Section -->
 <section class="page-hero bg-primary text-white py-5" style="margin-top: -35px; padding-top: 80px">
   <div class="container px-4">
     <div class="row align-items-center">
       <div class="col-lg-8 mx-auto text-center">
-        <h1 class="display-4 fw-bold mb-3" data-sal="fade-up" data-sal-duration="600">Nos Produits</h1>
-        <p class="lead mb-0" data-sal="fade-up" data-sal-duration="600" data-sal-delay="200">Découvrez notre gamme de produits de qualité, sélectionnés avec soin pour répondre à vos besoins.</p>
+        <div class="page-hero-icon mb-4" data-sal="zoom-in" data-sal-duration="600">
+          <i class="bi bi-box-seam"></i>
+        </div>
+        <h1 class="display-4 fw-bold mb-3" data-sal="fade-up" data-sal-duration="600" data-sal-delay="100">Nos Produits</h1>
+        <p class="lead mb-4" data-sal="fade-up" data-sal-duration="600" data-sal-delay="200">Découvrez notre gamme de produits de qualité, sélectionnés avec soin pour répondre à vos besoins.</p>
+        <div class="page-hero-breadcrumb" data-sal="fade-up" data-sal-duration="600" data-sal-delay="300">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb justify-content-center mb-0">
+              <li class="breadcrumb-item"><a href="{% url 'home' %}" class="text-white-50 text-decoration-none">Accueil</a></li>
+              <li class="breadcrumb-item active text-white" aria-current="page">Produits</li>
+            </ol>
+          </nav>
+        </div>
       </div>
     </div>
   </div>
@@ -14,7 +33,9 @@
 
 <section class="py-5">
   <div class="container px-4">
-    <div class="row g-4">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-10 col-lg-9">
+        <div class="row g-4">
       <div class="col-md-6 col-lg-4" data-sal="fade-up" data-sal-duration="600" data-sal-delay="100">
         <div class="product-card h-100 border rounded-3 overflow-hidden bg-white shadow-sm">
           <div class="product-image bg-light" style="height: 200px; overflow: hidden">
@@ -28,7 +49,7 @@
               <li><i class="bi bi-check text-primary me-2"></i>Fournitures de bureau</li>
               <li><i class="bi bi-check text-primary me-2"></i>Équipements techniques</li>
             </ul>
-            <a href="{% url 'quote' %}" class="btn btn-sm btn-outline-primary w-100">Demander un devis</a>
+            <a href="{% url 'contact' %}" class="btn btn-sm btn-outline-primary w-100">Demander un devis</a>
           </div>
         </div>
       </div>
@@ -46,7 +67,7 @@
               <li><i class="bi bi-check text-primary me-2"></i>Machines et équipements</li>
               <li><i class="bi bi-check text-primary me-2"></i>Pièces de rechange</li>
             </ul>
-            <a href="{% url 'quote' %}" class="btn btn-sm btn-outline-primary w-100">Demander un devis</a>
+            <a href="{% url 'contact' %}" class="btn btn-sm btn-outline-primary w-100">Demander un devis</a>
           </div>
         </div>
       </div>
@@ -64,7 +85,7 @@
               <li><i class="bi bi-check text-primary me-2"></i>Fournitures générales</li>
               <li><i class="bi bi-check text-primary me-2"></i>Articles divers</li>
             </ul>
-            <a href="{% url 'quote' %}" class="btn btn-sm btn-outline-primary w-100">Demander un devis</a>
+            <a href="{% url 'contact' %}" class="btn btn-sm btn-outline-primary w-100">Demander un devis</a>
           </div>
         </div>
       </div>
@@ -84,9 +105,11 @@
               <p class="mb-0 text-white-50">Contactez-nous pour discuter de vos besoins spécifiques. Nous pouvons vous proposer des solutions sur mesure adaptées à vos exigences.</p>
             </div>
             <div class="col-lg-4 text-center text-lg-end">
-              <a href="{% url 'quote' %}" class="btn btn-primary"> <i class="bi bi-telephone-fill me-2"></i>Demander un devis </a>
+              <a href="{% url 'contact' %}" class="btn btn-primary"> <i class="bi bi-telephone-fill me-2"></i>Demander un devis </a>
             </div>
           </div>
+        </div>
+      </div>
         </div>
       </div>
     </div>

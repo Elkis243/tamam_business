@@ -1,23 +1,18 @@
 # robots.txt pour Tamam Business
+# https://tamam.pythonanywhere.com/robots.txt
 
 User-agent: *
 Allow: /
-Allow: /about/
-Allow: /services/
-Allow: /products/
-Allow: /contact/
-Allow: /quote/
-Allow: /legal/
-Allow: /privacy/
 
 # Bloquer les pages d'administration et autres pages sensibles
 Disallow: /admin/
-Disallow: /admin/*
 Disallow: /static/admin/
 Disallow: /media/
 Disallow: /*.json$
-Disallow: /*.xml$
-Disallow: /api/
+
+# Autoriser explicitement le sitemap
+Allow: /sitemap.xml
+Allow: /robots.txt
 
 # Sitemap
 Sitemap: https://tamam.pythonanywhere.com/sitemap.xml

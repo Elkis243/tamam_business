@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{% load static %}
+{% block base %}
+{% include "components/navbar.html" %}
+
+<!-- Hero Section -->
+<section class="page-hero bg-primary text-white py-5" style="margin-top: -35px; padding-top: 80px;">
+  <div class="container px-4">
+    <div class="row align-items-center">
+      <div class="col-lg-8 mx-auto text-center">
+        <div class="error-icon mb-4">
+          <i class="bi bi-x-circle-fill" style="font-size: 120px; opacity: 0.9;"></i>
+        </div>
+        <h1 class="display-1 fw-bold mb-3" data-sal="fade-up" data-sal-duration="600">400</h1>
+        <h2 class="h3 mb-3 fw-bold" data-sal="fade-up" data-sal-duration="600" data-sal-delay="100">Requête incorrecte</h2>
+        <p class="lead mb-0" data-sal="fade-up" data-sal-duration="600" data-sal-delay="200">
+          La requête que vous avez envoyée est invalide ou mal formée.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-5">
+  <div class="container px-4">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 text-center">
+        <div class="error-content mb-5">
+          <p class="text-muted mb-4">
+            Il semble y avoir un problème avec votre requête. Veuillez vérifier les informations 
+            que vous avez saisies et réessayer.
+          </p>
+          <div class="d-flex flex-wrap gap-3 justify-content-center">
+            <a href="{% url 'home' %}" class="btn btn-primary px-4">
+              <i class="bi bi-house-door me-2"></i>Retour à l'accueil
+            </a>
+            <button onclick="history.back()" class="btn btn-outline-primary px-4">
+              <i class="bi bi-arrow-left me-2"></i>Retour en arrière
+            </button>
+          </div>
+        </div>
+
+        <div class="alert alert-info" role="alert">
+          <h5 class="alert-heading"><i class="bi bi-info-circle me-2"></i>Conseil</h5>
+          <p class="mb-0">
+            Si le problème persiste, n'hésitez pas à <a href="{% url 'contact' %}" class="alert-link">nous contacter</a> 
+            et nous vous aiderons à résoudre ce problème.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .error-icon {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+
+  .error-content {
+    padding: 2rem 0;
+  }
+</style>
+
+{% include "components/footer.html" %}
+{% endblock base %}
+

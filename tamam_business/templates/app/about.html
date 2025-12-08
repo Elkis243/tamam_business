@@ -1,5 +1,10 @@
 {% extends "base.html" %}
 {% load static %}
+
+{% block extra_css %}
+<link href="{% static 'css/about.css' %}" rel="stylesheet" />
+{% endblock extra_css %}
+
 {% block base %}
 {% include "components/navbar.html" %}
 
@@ -8,10 +13,21 @@
   <div class="container px-4">
     <div class="row align-items-center">
       <div class="col-lg-8 mx-auto text-center">
-        <h1 class="display-4 fw-bold mb-3" data-sal="fade-up" data-sal-duration="600">À propos de Tamam Business</h1>
-        <p class="lead mb-0" data-sal="fade-up" data-sal-duration="600" data-sal-delay="200">
+        <div class="page-hero-icon mb-4" data-sal="zoom-in" data-sal-duration="600">
+          <i class="bi bi-building"></i>
+        </div>
+        <h1 class="display-4 fw-bold mb-3" data-sal="fade-up" data-sal-duration="600" data-sal-delay="100">À propos de Tamam Business</h1>
+        <p class="lead mb-4" data-sal="fade-up" data-sal-duration="600" data-sal-delay="200">
           Votre partenaire de confiance pour le commerce général.
         </p>
+        <div class="page-hero-breadcrumb" data-sal="fade-up" data-sal-duration="600" data-sal-delay="300">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb justify-content-center mb-0">
+              <li class="breadcrumb-item"><a href="{% url 'home' %}" class="text-white-50 text-decoration-none">Accueil</a></li>
+              <li class="breadcrumb-item active text-white" aria-current="page">À propos</li>
+            </ol>
+          </nav>
+        </div>
       </div>
     </div>
   </div>
@@ -19,7 +35,9 @@
 
 <section class="py-5">
   <div class="container px-4">
-    <div class="row g-5 align-items-center mb-5">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-10 col-lg-9">
+        <div class="row g-5 align-items-center mb-5">
       <div class="col-lg-6" data-sal="fade-right" data-sal-duration="800">
         <img src="{% static 'images/img1.webp' %}" alt="Tamam Business - À propos" class="img-fluid rounded-3 shadow-sm" style="height: 400px; object-fit: cover; width: 100%" />
       </div>
@@ -107,6 +125,8 @@
               </a>
             </div>
           </div>
+        </div>
+      </div>
         </div>
       </div>
     </div>

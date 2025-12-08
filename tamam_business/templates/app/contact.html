@@ -1,117 +1,186 @@
-{% extends "base.html" %} {% load static %} {% block base %} {% include "components/navbar.html" %}
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+<link href="{% static 'css/contact.css' %}" rel="stylesheet" />
+{% endblock extra_css %}
+
+{% block base %}
+{% include "components/navbar.html" %}
 
 <!-- Hero Section -->
 <section class="page-hero bg-primary text-white py-5" style="margin-top: -35px; padding-top: 80px;">
   <div class="container px-4">
     <div class="row align-items-center">
       <div class="col-lg-8 mx-auto text-center">
-        <h1 class="display-4 fw-bold mb-3" data-sal="fade-up" data-sal-duration="600">Contactez-nous</h1>
-        <p class="lead mb-0" data-sal="fade-up" data-sal-duration="600" data-sal-delay="200">
+        <div class="page-hero-icon mb-4" data-sal="zoom-in" data-sal-duration="600">
+          <i class="bi bi-envelope-paper-heart"></i>
+        </div>
+        <h1 class="display-4 fw-bold mb-3" data-sal="fade-up" data-sal-duration="600" data-sal-delay="100">Contactez-nous</h1>
+        <p class="lead mb-4" data-sal="fade-up" data-sal-duration="600" data-sal-delay="200">
           Nous sommes là pour répondre à toutes vos questions. N'hésitez pas à nous contacter.
         </p>
+        <div class="page-hero-breadcrumb" data-sal="fade-up" data-sal-duration="600" data-sal-delay="300">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb justify-content-center mb-0">
+              <li class="breadcrumb-item"><a href="{% url 'home' %}" class="text-white-50 text-decoration-none">Accueil</a></li>
+              <li class="breadcrumb-item active text-white" aria-current="page">Contact</li>
+            </ol>
+          </nav>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="py-5">
+<section class="contact-section py-5">
   <div class="container px-4">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-10 col-lg-9">
+        <div class="contact-wrapper-modern">
+          <!-- Section gauche avec informations -->
+          <div class="contact-info-panel">
+            <div class="contact-info-content">
+              <h2 class="h2 fw-bold text-white mb-4">Restons en contact</h2>
+              <p class="text-white-50 mb-5">
+                Notre équipe est à votre écoute pour répondre à toutes vos questions et vous accompagner dans vos projets.
+              </p>
 
-    <div class="row g-5">
-      <!-- Formulaire de contact -->
-      <div class="col-lg-7">
-        <div class="card border-0 shadow-sm">
-          <div class="card-body p-4">
-            <h3 class="h4 mb-4 fw-bold">Envoyez-nous un message</h3>
+              <div class="contact-info-items">
+                <div class="contact-info-item">
+                  <div class="info-icon-wrapper">
+                    <i class="bi bi-geo-alt-fill"></i>
+                  </div>
+                  <div class="info-content">
+                    <h5 class="fw-bold text-white mb-2">Adresse</h5>
+                    <p class="text-white-50 mb-0">
+                      35, Avenue Loano<br />
+                      Commune de Kitambo<br />
+                      Kinshasa, République Démocratique du Congo
+                    </p>
+                  </div>
+                </div>
 
-            {% if messages %} {% for message in messages %}
-            <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
-              {{ message }}
-              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                <div class="contact-info-item">
+                  <div class="info-icon-wrapper">
+                    <i class="bi bi-telephone-fill"></i>
+                  </div>
+                  <div class="info-content">
+                    <h5 class="fw-bold text-white mb-2">Téléphone</h5>
+                    <a href="tel:+243977777107" class="text-white text-decoration-none">
+                      +243 977 777 107
+                    </a>
+                  </div>
+                </div>
+
+                <div class="contact-info-item">
+                  <div class="info-icon-wrapper">
+                    <i class="bi bi-envelope-fill"></i>
+                  </div>
+                  <div class="info-content">
+                    <h5 class="fw-bold text-white mb-2">Email</h5>
+                    <a href="mailto:papymvulazana@gmail.com" class="text-white text-decoration-none">
+                      papymvulazana@gmail.com
+                    </a>
+                  </div>
+                </div>
+
+                <div class="contact-info-item">
+                  <div class="info-icon-wrapper">
+                    <i class="bi bi-clock-fill"></i>
+                  </div>
+                  <div class="info-content">
+                    <h5 class="fw-bold text-white mb-2">Horaires</h5>
+                    <p class="text-white-50 mb-0">
+                      Lun - Ven: 08:00 - 18:00<br />
+                      Samedi: 09:00 - 13:00<br />
+                      Dimanche: Fermé
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
-            {% endfor %} {% endif %}
-
-            <form method="POST" action="{% url 'contact' %}">
-              {% csrf_token %}
-              <div class="mb-3">
-                <label for="name" class="form-label fw-semibold">Nom complet <span class="text-danger">*</span></label>
-                <input type="text" class="form-control" id="name" name="name" required placeholder="Votre nom" />
-              </div>
-              <div class="mb-3">
-                <label for="email" class="form-label fw-semibold">Email <span class="text-danger">*</span></label>
-                <input type="email" class="form-control" id="email" name="email" required placeholder="votre@email.com" />
-              </div>
-              <div class="mb-3">
-                <label for="phone" class="form-label fw-semibold">Téléphone</label>
-                <input type="tel" class="form-control" id="phone" name="phone" placeholder="+243 XXX XXX XXX" />
-              </div>
-              <div class="mb-3">
-                <label for="message" class="form-label fw-semibold">Message <span class="text-danger">*</span></label>
-                <textarea class="form-control" id="message" name="message" rows="5" required placeholder="Votre message..."></textarea>
-              </div>
-              <button type="submit" class="btn btn-primary w-100"><i class="bi bi-send me-2"></i>Envoyer le message</button>
-            </form>
           </div>
-        </div>
-      </div>
 
-      <!-- Informations de contact -->
-      <div class="col-lg-5">
-        <div class="card border-0 shadow-sm h-100">
-          <div class="card-body p-4">
-            <h3 class="h4 mb-4 fw-bold">Nos coordonnées</h3>
+          <!-- Section droite avec formulaire -->
+          <div class="contact-form-panel">
+            <div class="contact-form-content">
+              <h3 class="h4 fw-bold mb-1">Envoyez-nous un message</h3>
+              <p class="text-muted mb-4">Remplissez le formulaire et nous vous répondrons rapidement.</p>
 
-            <div class="mb-4">
-              <div class="d-flex align-items-start mb-3">
-                <div class="contact-icon me-3">
-                  <i class="bi bi-geo-alt-fill fs-4 text-primary"></i>
+              {% if messages %}
+                {% for message in messages %}
+                <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+                  <i class="bi bi-{% if message.tags == 'success' %}check-circle{% else %}exclamation-triangle{% endif %}-fill me-2"></i>
+                  {{ message }}
+                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
-                <div>
-                  <h5 class="fw-semibold mb-1">Adresse</h5>
-                  <p class="text-muted mb-0">
-                    N° 35 Avenue Loano<br />
-                    Commune de Kitambo, Kinshasa, RDC
-                  </p>
-                </div>
-              </div>
+                {% endfor %}
+              {% endif %}
 
-              <div class="d-flex align-items-start mb-3">
-                <div class="contact-icon me-3">
-                  <i class="bi bi-telephone-fill fs-4 text-primary"></i>
+              <form method="POST" action="{% url 'contact' %}" class="contact-form-modern">
+                {% csrf_token %}
+                
+                <div class="form-floating mb-3">
+                  <input 
+                    type="text" 
+                    class="form-control" 
+                    id="name" 
+                    name="name" 
+                    placeholder="Nom complet"
+                    required
+                  />
+                  <label for="name">
+                    <i class="bi bi-person me-2"></i>Nom complet <span class="text-danger">*</span>
+                  </label>
                 </div>
-                <div>
-                  <h5 class="fw-semibold mb-1">Téléphone</h5>
-                  <p class="text-muted mb-0">
-                    <a href="tel:+243977777107" class="text-decoration-none">+243 977 777 107</a>
-                  </p>
-                </div>
-              </div>
 
-              <div class="d-flex align-items-start mb-3">
-                <div class="contact-icon me-3">
-                  <i class="bi bi-envelope-fill fs-4 text-primary"></i>
+                <div class="form-floating mb-3">
+                  <input 
+                    type="email" 
+                    class="form-control" 
+                    id="email" 
+                    name="email" 
+                    placeholder="Email"
+                    required
+                  />
+                  <label for="email">
+                    <i class="bi bi-envelope me-2"></i>Email <span class="text-danger">*</span>
+                  </label>
                 </div>
-                <div>
-                  <h5 class="fw-semibold mb-1">Email</h5>
-                  <p class="text-muted mb-0">
-                    <a href="mailto:papymvulazana@gmail.com" class="text-decoration-none">papymvulazana@gmail.com</a>
-                  </p>
-                </div>
-              </div>
 
-              <div class="d-flex align-items-start">
-                <div class="contact-icon me-3">
-                  <i class="bi bi-clock-fill fs-4 text-primary"></i>
+                <div class="form-floating mb-3">
+                  <input 
+                    type="tel" 
+                    class="form-control" 
+                    id="phone" 
+                    name="phone" 
+                    placeholder="Téléphone"
+                  />
+                  <label for="phone">
+                    <i class="bi bi-telephone me-2"></i>Téléphone
+                  </label>
                 </div>
-                <div>
-                  <h5 class="fw-semibold mb-1">Horaires</h5>
-                  <p class="text-muted mb-0">
-                    Lun - Ven: 08:00 - 18:00<br />
-                    Samedi: 09:00 - 13:00<br />
-                    Dimanche: Fermé
-                  </p>
+
+                <div class="form-floating mb-4">
+                  <textarea 
+                    class="form-control" 
+                    id="message" 
+                    name="message" 
+                    placeholder="Message"
+                    style="height: 120px;"
+                    required
+                  ></textarea>
+                  <label for="message">
+                    <i class="bi bi-chat-left-text me-2"></i>Message <span class="text-danger">*</span>
+                  </label>
                 </div>
-              </div>
+
+                <button type="submit" class="btn btn-contact-modern w-100">
+                  <span class="btn-text">Envoyer le message</span>
+                  <i class="bi bi-arrow-right ms-2"></i>
+                </button>
+              </form>
             </div>
           </div>
         </div>
@@ -121,30 +190,226 @@
 </section>
 
 <style>
-  .contact-icon {
-    width: 45px;
-    height: 45px;
+  /* ============================================
+     Contact Section - Design Split Panel
+     ============================================ */
+  .contact-section {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    min-height: calc(100vh - 200px);
+  }
+
+  .contact-wrapper-modern {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+    background: white;
+  }
+
+  /* Panel gauche - Informations avec fond gradient */
+  .contact-info-panel {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    position: relative;
+    overflow: hidden;
+    padding: 3rem;
+    display: flex;
+    align-items: center;
+  }
+
+  .contact-info-panel::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.08) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  .contact-info-panel::after {
+    content: "";
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 300px;
+    height: 300px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  .contact-info-content {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+  }
+
+  .contact-info-items {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .contact-info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.25rem;
+    transition: transform 0.3s ease;
+  }
+
+  .contact-info-item:hover {
+    transform: translateX(5px);
+  }
+
+  .info-icon-wrapper {
+    width: 55px;
+    height: 55px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(102, 126, 234, 0.1);
-    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    color: white;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
   }
 
-  .form-control:focus {
-    border-color: #667eea;
-    box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+  .info-content h5 {
+    font-size: 1rem;
   }
 
-  .btn-primary {
+  .info-content a {
+    transition: opacity 0.3s ease;
+  }
+
+  .info-content a:hover {
+    opacity: 0.8;
+  }
+
+  /* Panel droit - Formulaire */
+  .contact-form-panel {
+    background: white;
+    padding: 3rem;
+    display: flex;
+    align-items: center;
+  }
+
+  .contact-form-content {
+    width: 100%;
+  }
+
+  .contact-form-modern .form-floating {
+    margin-bottom: 1rem;
+  }
+
+  .contact-form-modern .form-control {
+    border: 2px solid #e9ecef;
+    border-radius: 12px;
+    padding: 1rem 0.75rem;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background-color: #f8f9fa;
+  }
+
+  .contact-form-modern .form-control:focus {
+    border-color: var(--primary-color);
+    background-color: white;
+    box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.15);
+    outline: none;
+  }
+
+  .contact-form-modern .form-floating > label {
+    color: #6c757d;
+    padding: 1rem 0.75rem;
+    font-weight: 500;
+  }
+
+  .contact-form-modern .form-floating > .form-control:focus ~ label,
+  .contact-form-modern .form-floating > .form-control:not(:placeholder-shown) ~ label {
+    color: var(--primary-color);
+    transform: scale(0.85) translateY(-0.5rem) translateX(0.15rem);
+  }
+
+  .btn-contact-modern {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     border: none;
+    color: white;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
-  .btn-primary:hover {
+  .btn-contact-modern:hover {
     background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+    box-shadow: 0 6px 25px rgba(102, 126, 234, 0.4);
+    color: white;
+  }
+
+  .btn-contact-modern:hover i {
+    transform: translateX(5px);
+  }
+
+  .btn-contact-modern i {
+    transition: transform 0.3s ease;
+    font-size: 1.2rem;
+  }
+
+  .alert {
+    border-radius: 12px;
+    border: none;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    margin-bottom: 1.5rem;
+  }
+
+  /* Responsive */
+  @media (max-width: 991px) {
+    .contact-wrapper-modern {
+      grid-template-columns: 1fr;
+    }
+
+    .contact-info-panel {
+      padding: 2.5rem;
+    }
+
+    .contact-form-panel {
+      padding: 2.5rem;
+    }
+
+    .contact-info-items {
+      gap: 1.5rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .contact-info-panel {
+      padding: 2rem;
+    }
+
+    .contact-form-panel {
+      padding: 2rem 1.5rem;
+    }
+
+    .contact-info-content h2 {
+      font-size: 1.75rem;
+    }
+
+    .info-icon-wrapper {
+      width: 50px;
+      height: 50px;
+      font-size: 1.3rem;
+    }
   }
 </style>
 
