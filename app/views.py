@@ -92,7 +92,7 @@ def robots_txt(request):
 
     # Fallback si le fichier n'existe pas
     robots_content = """# robots.txt pour Tamam Business
-# https://tamam.pythonanywhere.com/robots.txt
+# https://www.tamam-business.com/robots.txt
 
 User-agent: *
 Allow: /
@@ -108,7 +108,7 @@ Allow: /sitemap.xml
 Allow: /robots.txt
 
 # Sitemap
-Sitemap: https://tamam.pythonanywhere.com/sitemap.xml"""
+Sitemap: https://www.tamam-business.com/sitemap.xml"""
     return HttpResponse(robots_content, content_type="text/plain")
 
 

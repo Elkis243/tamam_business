@@ -6,7 +6,7 @@
   
   <!-- Page d'accueil -->
   <url>
-    <loc>https://tamam.pythonanywhere.com/</loc>
+    <loc>https://www.tamam-business.com/</loc>
     <lastmod>2025-12-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -14,7 +14,7 @@
   
   <!-- Page À propos -->
   <url>
-    <loc>https://tamam.pythonanywhere.com/about/</loc>
+    <loc>https://www.tamam-business.com/about/</loc>
     <lastmod>2025-12-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -22,7 +22,7 @@
   
   <!-- Page Services -->
   <url>
-    <loc>https://tamam.pythonanywhere.com/services/</loc>
+    <loc>https://www.tamam-business.com/services/</loc>
     <lastmod>2025-12-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
@@ -30,7 +30,7 @@
   
   <!-- Page Produits -->
   <url>
-    <loc>https://tamam.pythonanywhere.com/products/</loc>
+    <loc>https://www.tamam-business.com/products/</loc>
     <lastmod>2025-12-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -38,7 +38,7 @@
   
   <!-- Page Contact -->
   <url>
-    <loc>https://tamam.pythonanywhere.com/contact/</loc>
+    <loc>https://www.tamam-business.com/contact/</loc>
     <lastmod>2025-12-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

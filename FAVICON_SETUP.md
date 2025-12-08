@@ -108,7 +108,7 @@ Une fois les fichiers créés, vérifiez que :
 ## Test
 
 Pour tester la configuration :
-1. Visitez `https://tamam.pythonanywhere.com/site.webmanifest`
+1. Visitez `https://www.tamam-business.com/site.webmanifest`
 2. Vérifiez les favicons dans les onglets du navigateur
 3. Testez sur mobile (Apple Touch Icon)
 4. Utilisez Google Search Console pour vérifier l'indexation

@@ -1,5 +1,5 @@
 # robots.txt pour Tamam Business
-# https://tamam.pythonanywhere.com/robots.txt
+# https://www.tamam-business.com/robots.txt
 
 User-agent: *
 Allow: /
@@ -15,5 +15,5 @@ Allow: /sitemap.xml
 Allow: /robots.txt
 
 # Sitemap
-Sitemap: https://tamam.pythonanywhere.com/sitemap.xml
+Sitemap: https://www.tamam-business.com/sitemap.xml
 
