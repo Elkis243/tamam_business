@@ -49,30 +49,27 @@
     <meta name="twitter:image" content="https://{{ request.get_host }}{% static 'images/logo.png' %}" />
     <meta name="twitter:image:alt" content="Logo Tamam Business" />
 
-    <!-- Favicon - Configuration complète pour SEO et visibilité -->
+    <!-- Favicon - Configuration complète -->
     <!-- Favicon standard -->
-    <link rel="icon" type="image/x-icon" href="{% static 'images/favicon.ico' %}" />
-    <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/favicon.ico' %}" />
+    <link rel="icon" type="image/x-icon" href="{% static 'images/favicon/favicon.ico' %}" />
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/favicon/favicon.ico' %}" />
 
     <!-- Favicons PNG pour différents navigateurs -->
-    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/favicon-16x16.png' %}" />
-    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'images/favicon-32x32.png' %}" />
-    <link rel="icon" type="image/png" sizes="192x192" href="{% static 'images/android-chrome-192x192.png' %}" />
-    <link rel="icon" type="image/png" sizes="512x512" href="{% static 'images/android-chrome-512x512.png' %}" />
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/favicon/favicon-16x16.png' %}" />
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'images/favicon/favicon-32x32.png' %}" />
+    <link rel="icon" type="image/png" sizes="192x192" href="{% static 'images/favicon/android-chrome-192x192.png' %}" />
+    <link rel="icon" type="image/png" sizes="512x512" href="{% static 'images/favicon/android-chrome-512x512.png' %}" />
 
     <!-- Apple Touch Icon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'images/apple-touch-icon.png' %}" />
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'images/favicon/apple-touch-icon.png' %}" />
 
     <!-- Web App Manifest -->
-    <link rel="manifest" href="{% url 'manifest' %}" />
+    <link rel="manifest" href="{% static 'images/favicon/site.webmanifest' %}" />
 
     <!-- Theme Color pour les navigateurs modernes -->
     <meta name="theme-color" content="#667eea" />
     <meta name="msapplication-TileColor" content="#764ba2" />
-    <meta name="msapplication-config" content="{% static 'browserconfig.xml' %}" />
-
-    <!-- Favicon pour Safari -->
-    <link rel="mask-icon" href="{% static 'images/safari-pinned-tab.svg' %}" color="#667eea" />
+    <meta name="msapplication-TileImage" content="{% static 'images/favicon/android-chrome-192x192.png' %}" />
 
     <!-- Canonical URL -->
     <link rel="canonical" href="https://{{ request.get_host }}{{ request.path }}" />
