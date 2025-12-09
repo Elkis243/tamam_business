@@ -225,25 +225,3 @@ def manifest_json(request):
         json.dumps(fallback_manifest, ensure_ascii=False, indent=2),
         content_type="application/manifest+json",
     )
-
-
-# Handlers pour les pages d'erreur personnalisées
-def bad_request(request, exception=None):
-    """Handler pour l'erreur 400"""
-    return render(request, "400.html", status=400)
-
-
-def permission_denied(request, exception=None):
-    """Handler pour l'erreur 403"""
-    return render(request, "403.html", status=403)
-
-
-def page_not_found(request, exception=None):
-    """Handler pour l'erreur 404"""
-    return render(request, "404.html", status=404)
-
-
-def server_error(request):
-    """Handler pour l'erreur 500"""
-    # Note: Cette vue ne reçoit pas d'exception comme paramètre
-    return render(request, "500.html", status=500)
