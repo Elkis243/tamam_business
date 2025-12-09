@@ -84,7 +84,7 @@ def robots_txt(request):
     host = request.get_host()
     protocol = "https" if request.is_secure() else "http"
     base_url = f"{protocol}://{host}"
-    
+
     # Générer le robots.txt dynamiquement
     robots_content = f"""# robots.txt pour Tamam Business
 # {base_url}/robots.txt
@@ -104,7 +104,7 @@ Allow: /robots.txt
 
 # Sitemap
 Sitemap: {base_url}/sitemap.xml"""
-    
+
     return HttpResponse(robots_content, content_type="text/plain; charset=utf-8")
 
 
@@ -114,17 +114,17 @@ def sitemap_xml(request):
     from pathlib import Path
     from datetime import datetime
     from django.urls import reverse
-    
+
     # Obtenir le domaine actuel
     host = request.get_host()
     protocol = "https" if request.is_secure() else "http"
     base_url = f"{protocol}://{host}"
-    
+
     # Date actuelle au format ISO
     current_date = datetime.now().strftime("%Y-%m-%d")
-    
+
     # Générer le sitemap dynamiquement
-    sitemap_content = f'''<?xml version="1.0" encoding="UTF-8"?>
+    sitemap_content = f"""<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
@@ -170,8 +170,8 @@ def sitemap_xml(request):
     <priority>0.8</priority>
   </url>
   
-</urlset>'''
-    
+</urlset>"""
+
     return HttpResponse(
         sitemap_content,
         content_type="application/xml; charset=utf-8",
@@ -195,7 +195,7 @@ def manifest_json(request):
                 host = request.get_host()
                 protocol = "https" if request.is_secure() else "http"
                 base_url = f"{protocol}://{host}"
-                
+
                 # Mettre à jour les chemins des icônes avec le domaine complet
                 for icon in manifest_data.get("icons", []):
                     src = icon.get("src", "")
@@ -204,7 +204,7 @@ def manifest_json(request):
                     elif not src.startswith("http"):
                         # Si le chemin est relatif, ajouter le domaine
                         icon["src"] = f"{base_url}/static/images/{src.split('/')[-1]}"
-                
+
                 return HttpResponse(
                     json.dumps(manifest_data, ensure_ascii=False, indent=2),
                     content_type="application/manifest+json",
@@ -228,21 +228,22 @@ def manifest_json(request):
 
 
 # Handlers pour les pages d'erreur personnalisées
-def bad_request(request, exception):
+def bad_request(request, exception=None):
     """Handler pour l'erreur 400"""
     return render(request, "400.html", status=400)
 
 
-def permission_denied(request, exception):
+def permission_denied(request, exception=None):
     """Handler pour l'erreur 403"""
     return render(request, "403.html", status=403)
 
 
-def page_not_found(request, exception):
+def page_not_found(request, exception=None):
     """Handler pour l'erreur 404"""
     return render(request, "404.html", status=404)
 
 
 def server_error(request):
     """Handler pour l'erreur 500"""
+    # Note: Cette vue ne reçoit pas d'exception comme paramètre
     return render(request, "500.html", status=500)
