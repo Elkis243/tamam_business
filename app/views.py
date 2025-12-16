@@ -185,7 +185,7 @@ def manifest_json(request):
     import json
 
     base_dir = Path(settings.BASE_DIR)
-    manifest_path = base_dir / "tamam_business" / "static" / "site.webmanifest"
+    manifest_path = base_dir / "static" / "site.webmanifest"
 
     if manifest_path.exists():
         try:
@@ -225,3 +225,18 @@ def manifest_json(request):
         json.dumps(fallback_manifest, ensure_ascii=False, indent=2),
         content_type="application/manifest+json",
     )
+
+
+def favicon_view(request):
+    """Vue pour servir favicon.ico"""
+    from pathlib import Path
+
+    base_dir = Path(settings.BASE_DIR)
+    favicon_path = base_dir / "static" / "favicon.ico"
+
+    if favicon_path.exists():
+        return FileResponse(open(favicon_path, "rb"), content_type="image/x-icon")
+    else:
+        from django.http import HttpResponseNotFound
+
+        return HttpResponseNotFound("Favicon not found")

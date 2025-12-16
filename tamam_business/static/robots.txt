@@ -1,19 +1,9 @@
-# robots.txt pour Tamam Business
-# https://www.tamam-business.com/robots.txt
-
 User-agent: *
-Allow: /
 
-# Bloquer les pages d'administration et autres pages sensibles
-Disallow: /admin/
-Disallow: /static/admin/
-Disallow: /media/
-Disallow: /*.json$
+Allow: /favicon.ico
 
-# Autoriser explicitement le sitemap
-Allow: /sitemap.xml
-Allow: /robots.txt
+Allow: /static/
 
-# Sitemap
+Disallow:
+
 Sitemap: https://www.tamam-business.com/sitemap.xml
-
